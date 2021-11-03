@@ -1,15 +1,18 @@
 ﻿@model WebMvc1.Models.FormModel
 @{
-    ViewData["Title"] = "Form1";
+    ViewData["Title"] = "Form one";
+
+    var TodaysDate = (DateTime.Now - Model.DateOfBirth).Days;
+    var Date = (Model.DateOfBirth.ToShortDateString());
 }
 
 <div class="text-left">
     <h1 class="display-4">Dane z formularza</h1>
     @Html.DisplayNameFor(model => model.Name):          @Html.DisplayFor(model => model.Name)
     <br />
-    @Html.DisplayNameFor(model => model.Description):   @Html.DisplayFor(model => model.Description)
+    @Html.DisplayNameFor(model => model.DateOfBirth):   @Date
     <br />
-    @Html.DisplayNameFor(model => model.IsVisible):     @Html.DisplayFor(model => model.IsVisible)
+    Dni od daty urodzenia do dzisiaj: @TodaysDate
 </div>
 <br/>
 <a href="/form1.html">Powrót do Form1 (HTML)</a>
