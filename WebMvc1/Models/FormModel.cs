@@ -10,5 +10,7 @@ namespace WebMvc1.Models
 
         [Display(Name = "Data urodzenia")]
         public DateTime DateOfBirth { get; set; }
+
+        public int Days { get; set; }
     }
 }

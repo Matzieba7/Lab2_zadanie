@@ -37,6 +37,7 @@ namespace WebMvc1.Controllers
         [HttpPost]
         public IActionResult Form1(FormModel model)
         {
+            model.Days = (DateTime.Now - model.DateOfBirth).Days;
             return View(model);
         }
 
